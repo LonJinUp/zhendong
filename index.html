@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>手机震动</title>
+</head>
+<style>
+    .shock{
+        width: 300px;
+        margin: 0 auto;
+        height: 100px;
+        font-size: 15px;
+        font-weight: bold;
+        color: red;
+    }
+</style>
+<body>
+<div class="shock">
+    按我手机会震动
+</div>
+</body>
+<script>
+    function vibration(){
+        navigator.vibrate = navigator.vibrate
+            || navigator.webkitVibrate
+            || navigator.mozVibrate
+            || navigator.msVibrate;
+
+        if (navigator.vibrate) {
+            // 支持
+            console.log("支持设备震动！");
+        }
+        $(".shock").click(function(){
+            alert("1111");
+            navigator.vibrate([500, 300, 400,300]);
+        });
+    }
+  
+</script>
+</html>
